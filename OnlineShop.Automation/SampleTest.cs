@@ -28,6 +28,23 @@ namespace OnlineShop.Automation
 
         }
 
+        [Test]
+        [Ignore("Assert doesn't work!")]
+        public void GoToContactUsPageAndSendMessage()
+        {
+            MainPage home = new MainPage(driver);
+            home.gotoMainPage();
+            ContactUsPage contactUs = home.goToContactPage();
+
+            contactUs.SelectSubjectHeading(ConstantsHelper.subjectWebmaster);
+            contactUs.InsertEmailAddress("test@testselenium.com");
+            contactUs.InsertOrderReference("1234");
+            contactUs.InsertMessage("TEST MESSAGE");
+            contactUs.SubmitMessage();
+
+            Assert.IsTrue(contactUs.IsSuccessBoxVisible());
+        }
+
         [TearDown]
         public void TearDown()
         {

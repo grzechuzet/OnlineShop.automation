@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\ConstantsHelper.cs" />
+    <Compile Include="Pages\ContactUsPage.cs" />
     <Compile Include="Pages\MainPage.cs" />
     <Compile Include="SampleTest.cs" />
     <Compile Include="TestBase.cs" />

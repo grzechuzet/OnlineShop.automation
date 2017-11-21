@@ -11,6 +11,9 @@ namespace OnlineShop.Automation.Pages
         private IWebDriver driver;
         private string baseURL = @"http://automationpractice.com";
 
+        [FindsBy(How = How.Id, Using = "contact-link")]
+        private IWebElement ContactUsLink;
+
         public MainPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -20,6 +23,12 @@ namespace OnlineShop.Automation.Pages
         public void gotoMainPage()
         {
             driver.Navigate().GoToUrl(baseURL);
+        }
+
+        public ContactUsPage goToContactPage()
+        {
+            ContactUsLink.Click();
+            return new ContactUsPage(driver);
         }
     }
 }
