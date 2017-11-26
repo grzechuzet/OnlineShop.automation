@@ -29,7 +29,6 @@ namespace OnlineShop.Automation
         }
 
         [Test]
-        [Ignore("Assert doesn't work!")]
         public void GoToContactUsPageAndSendMessage()
         {
             MainPage home = new MainPage(driver);

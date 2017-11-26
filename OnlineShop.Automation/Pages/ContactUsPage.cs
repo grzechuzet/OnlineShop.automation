@@ -33,10 +33,10 @@ namespace OnlineShop.Automation.Pages
         [FindsBy(How = How.Id, Using = "submitMessage")]
         private IWebElement SubmitMessageButton;
 
-        [FindsBy(How = How.ClassName, Using = "alert alert-danger")]
+        [FindsBy(How = How.ClassName, Using = "alert-danger")]
         private IWebElement ErrorBox;
         
-        [FindsBy(How = How.ClassName, Using = "alert alert-success")]
+        [FindsBy(How = How.ClassName, Using = "alert-success")]
         private IWebElement SuccessBox;
 
         public void SelectSubjectHeading(string text)
@@ -65,7 +65,7 @@ namespace OnlineShop.Automation.Pages
         public void SubmitMessage()
         {
             SubmitMessageButton.Click();
-            new WebDriverWait(driver, TimeSpan.FromSeconds(2)).Until(ExpectedConditions.ElementIsVisible(By.ClassName("alert-success")));
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(2)).Until(ExpectedConditions.ElementIsVisible(By.ClassName("alert-success")));
         }
 
         public bool IsErrorBoxVisible()
