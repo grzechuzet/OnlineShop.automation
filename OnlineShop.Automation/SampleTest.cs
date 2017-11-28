@@ -44,6 +44,17 @@ namespace OnlineShop.Automation
             Assert.IsTrue(contactUs.IsSuccessBoxVisible());
         }
 
+				[Test]
+				public void GoToSignInPageAndCreateAnAccount()
+				{
+							MainPage home = new MainPage(driver);
+							home.gotoMainPage();
+							SignInPage signPage = home.goToSignPage();
+
+							signPage.InsertEmailSignIn("test@testselenium.com");
+							signPage.SubmitAccount();
+				}
+
         [TearDown]
         public void TearDown()
         {

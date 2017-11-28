@@ -14,7 +14,10 @@ namespace OnlineShop.Automation.Pages
         [FindsBy(How = How.Id, Using = "contact-link")]
         private IWebElement ContactUsLink;
 
-        public MainPage(IWebDriver driver)
+				[FindsBy(How = How.ClassName, Using = "header_user_info")]
+				private IWebElement SignInLink;
+
+				public MainPage(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
@@ -30,5 +33,10 @@ namespace OnlineShop.Automation.Pages
             ContactUsLink.Click();
             return new ContactUsPage(driver);
         }
+				public SignInPage goToSignPage()
+				{
+						SignInLink.Click();
+						return new SignInPage(driver);
+				}
     }
 }

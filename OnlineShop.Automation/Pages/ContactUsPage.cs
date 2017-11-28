@@ -37,7 +37,8 @@ namespace OnlineShop.Automation.Pages
         private IWebElement ErrorBox;
         
         [FindsBy(How = How.ClassName, Using = "alert-success")]
-        private IWebElement SuccessBox;
+				//[FindsBy(How = How.XPath, Using = "//div[@id='center_column']/p[text()='Your message has been successfully sent to our team.']")]
+				private IWebElement SuccessBox;
 
         public void SelectSubjectHeading(string text)
         {
